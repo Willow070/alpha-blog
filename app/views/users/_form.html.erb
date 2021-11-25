@@ -1,0 +1,30 @@
+<div class="row justify-content-center">
+  <div class="col-10">
+    <%= render 'shared/errors', obj: @user %>
+    <%= form_with(model: @user, class: "shadow p-3 mb-3 rounded bg-info", local: true) do |f| %>
+    <div class="form-group row mb-4">
+      <%= f.label :username, class: "col-2 col-form-label text-light" %>
+      <div class="col-10">
+        <%= f.text_field :username, class: "form-control shadow rounded", placeholder: "Enter a username" %>
+      </div>
+    </div>
+    <div class="form-group row mb-4">
+      <%= f.label :email, class: "col-2 col-form-label text-light" %>
+      <div class="col-10">
+        <%= f.text_field :email, class: "form-control shadow rounded", placeholder: "Enter a email" %>
+      </div>
+    </div>
+    <div class="form-group row mb-4">
+      <%= f.label :password, class: "col-2 col-form-label text-light" %>
+      <div class="col-10">
+        <%= f.text_field :password, class: "form-control shadow rounded", placeholder: "Enter a password" %>
+      </div>
+    </div>
+      <div class="form-goup row mb-4">
+        <%= f.submit "Sign up now!", class: "btn btn-outline-light btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= render 'back_to_list' %>
+</div>
