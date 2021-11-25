@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :articles
   validates :username, uniqueness: { case_sensitive: false },
                       presence: true,
                       length: { minimum: 3, maximum: 50 }
@@ -7,5 +8,4 @@ class User < ApplicationRecord
                       presence: true,
                       length: { maximum: 105 },
                       format: { with: VALID_EMAIL_REGEX }
-
 end
