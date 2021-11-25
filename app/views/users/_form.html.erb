@@ -21,7 +21,7 @@
       </div>
     </div>
       <div class="form-goup row mb-4">
-        <%= f.submit "Sign up now!", class: "btn btn-outline-light btn-lg" %>
+        <%= f.submit(@user.new_record? ? "Sign up now!" : "Update your profile", class: "btn btn-outline-light btn-lg") %>
       </div>
     <% end %>
   </div>
