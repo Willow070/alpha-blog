@@ -16,6 +16,7 @@
                 <p class="card-text"><%= pluralize(user.articles.count, "article", "articles") %></p>
                 <%= link_to "View", user, class: "btn btn-outline-success" %>
                 <%= link_to "Edit", edit_user_path(user), class: "btn btn-outline-info" if logged_in? && user == current_user %>
+                <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" if current_user.admin? %>
               </div>
               <div class="card-footer text-muted">
                 <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
